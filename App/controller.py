@@ -23,6 +23,7 @@
 import config as cf
 import model
 import csv
+#import time
 
 
 """
@@ -72,8 +73,12 @@ def loadTags(catalog):
     """
     tagsfile = cf.data_dir + 'GoodReads/tags.csv'
     input_file = csv.DictReader(open(tagsfile, encoding='utf-8'))
+    #iniTime = time.time_ns()
     for tag in input_file:
         model.addTag(catalog, tag)
+    #finalTime = time.time_ns()
+    #deltaTime = finalTime - iniTime
+    #print("Para cargar loadTags tardo", deltaTime, "ns")    
 
 
 def loadBooksTags(catalog):
@@ -82,8 +87,12 @@ def loadBooksTags(catalog):
     """
     booktagsfile = cf.data_dir + 'GoodReads/book_tags-small.csv'
     input_file = csv.DictReader(open(booktagsfile, encoding='utf-8'))
+    #iniTime = time.time_ns()
     for booktag in input_file:
         model.addBookTag(catalog, booktag)
+    #finalTime = time.time_ns()
+    #deltaTime = finalTime - iniTime
+    #print("Para cargar loadBooksTags tardo", deltaTime, "ns")        
 
 
 # Funciones de ordenamiento

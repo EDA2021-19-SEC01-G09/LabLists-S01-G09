@@ -127,3 +127,5 @@ def countBooksByTag(catalog, tag):
     Retorna los libros que fueron etiquetados con el tag
     """
     return model.countBooksByTag(catalog, tag)
+
+print(loadData(initCatalog()))

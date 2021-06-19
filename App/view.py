@@ -90,7 +90,8 @@ while True:
     if int(inputs[0]) == 1:
         print("Cargando información de los archivos ....")
         catalog = initCatalog()
-        loadData(catalog)
+        a = loadData(catalog)
+        print(a)
         print('Libros cargados: ' + str(lt.size(catalog['books'])))
         print('Autores cargados: ' + str(lt.size(catalog['authors'])))
         print('Géneros cargados: ' + str(lt.size(catalog['tags'])))
